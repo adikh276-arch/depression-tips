@@ -111,15 +111,6 @@ export default function TipDetail() {
           </section>
         )}
 
-        {/* Action button */}
-        <div className="animate-fade-in-up" style={{ opacity: 0, animationDelay: "320ms" }}>
-          <Button
-            className="w-full rounded-lg h-12 text-sm font-bold"
-            onClick={() => navigate("/")}
-          >
-            {tip.actionLabel}
-          </Button>
-        </div>
       </div>
     </div>
   );
