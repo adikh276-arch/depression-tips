@@ -1,24 +1,33 @@
+import { useTranslation } from "react-i18next";
 import { tips } from "@/data/tips";
 import TipCard from "@/components/TipCard";
+import LanguageSelector from "@/components/LanguageSelector";
 
 export default function Index() {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen gradient-bg">
       <div className="mx-auto max-w-md px-5 py-10 pb-16">
-        {/* Header */}
-        <div className="mb-8">
-          <p className="text-sm text-muted-foreground mb-1">You're not alone 💛</p>
-          <h1 className="text-2xl font-extrabold text-foreground leading-tight">
-            Support for Low Mood
-          </h1>
-          <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
-            Gentle steps to help you move forward, one day at a time.
-          </p>
+        {/* Header row */}
+        <div className="flex items-start justify-between mb-8 gap-3">
+          <div className="flex-1 min-w-0">
+            <p className="text-sm text-muted-foreground mb-1">{t("notAlone")}</p>
+            <h1 className="text-2xl font-extrabold text-foreground leading-tight">
+              {t("supportForLowMood")}
+            </h1>
+            <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
+              {t("gentleSteps")}
+            </p>
+          </div>
+          <div className="shrink-0 pt-1">
+            <LanguageSelector />
+          </div>
         </div>
 
         {/* Section title */}
         <h2 className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-4">
-          Daily Support Tips
+          {t("dailySupportTips")}
         </h2>
 
         {/* Tip cards */}
@@ -30,8 +39,7 @@ export default function Index() {
 
         {/* Bottom support message */}
         <p className="mt-10 text-center text-xs text-muted-foreground leading-relaxed px-2">
-          If you're struggling deeply, consider reaching out to someone you
-          trust or a mental health professional.
+          {t("strugglingMessage")}
         </p>
       </div>
     </div>

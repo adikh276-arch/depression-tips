@@ -22,3 +22,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Translation script (contains API key — do not commit)
+translate.mjs
+
+# Ensure locales are always committed
+!public/locales
